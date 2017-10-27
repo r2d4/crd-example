@@ -40,7 +40,7 @@ func main() {
 	}
 
 	controller := controller.R2d4Controller{
-		R2d4Client: r2d4Clientset.RESTClient(),
+		R2d4Client: r2d4Clientset.R2d4V1().RESTClient(),
 	}
 
 	c := make(chan os.Signal, 1)

@@ -19,7 +19,7 @@ type R2d4Controller struct {
 
 // Run starts an Foo resource controller
 func (c *R2d4Controller) Run(ctx context.Context) error {
-	fmt.Print("Watch Example objects\n")
+	fmt.Print("Watch Foo objects\n")
 
 	// Watch Foo objects
 	_, err := c.watchFoos(ctx)
@@ -33,7 +33,6 @@ func (c *R2d4Controller) Run(ctx context.Context) error {
 }
 
 func (c *R2d4Controller) watchFoos(ctx context.Context) (cache.Controller, error) {
-	fmt.Println(c.R2d4Client.APIVersion())
 	source := cache.NewListWatchFromClient(
 		c.R2d4Client,
 		crv1.FooResourcePlural,

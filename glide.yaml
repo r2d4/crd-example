@@ -1,0 +1,24 @@
+package: github.com/r2d4/crd
+import:
+- package: github.com/golang/glog
+- package: k8s.io/apimachinery
+  subpackages:
+  - pkg/api/errors
+  - pkg/apis/meta/v1
+  - pkg/conversion
+  - pkg/labels
+  - pkg/runtime
+  - pkg/runtime/schema
+  - pkg/runtime/serializer
+  - pkg/types
+  - pkg/watch
+- package: k8s.io/client-go
+  subpackages:
+  - discovery
+  - discovery/fake
+  - rest
+  - testing
+  - tools/cache
+  - tools/clientcmd
+  - util/flowcontrol
+- package: k8s.io/code-generator

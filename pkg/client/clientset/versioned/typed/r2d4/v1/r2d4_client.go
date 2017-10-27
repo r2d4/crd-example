@@ -17,6 +17,8 @@ limitations under the License.
 package v1
 
 import (
+	"fmt"
+
 	v1 "github.com/r2d4/crd/pkg/apis/r2d4.com/v1"
 	"github.com/r2d4/crd/pkg/client/clientset/versioned/scheme"
 	serializer "k8s.io/apimachinery/pkg/runtime/serializer"
@@ -43,6 +45,8 @@ func NewForConfig(c *rest.Config) (*R2d4V1Client, error) {
 	if err := setConfigDefaults(&config); err != nil {
 		return nil, err
 	}
+	fmt.Println("config: ", &config)
+	fmt.Println("gvk: ", config.GroupVersion.String())
 	client, err := rest.RESTClientFor(&config)
 	if err != nil {
 		return nil, err
